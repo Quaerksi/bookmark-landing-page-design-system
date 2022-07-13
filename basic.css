@@ -1,0 +1,443 @@
+/* 
+*******Reset CSS ******
+ */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    font-family: var(--basic-font-family);
+    font-size: var(--basic-font-size);
+
+    margin: 2rem;
+  }
+
+/* ------------------- */
+/* Custom properties   */
+/* ------------------- */
+
+:root {
+
+    /* ### Colors ### */
+
+    /* Primary */
+    --hsl-soft-blue: 231, 69%, 60%;
+    --hsl-soft-red: 0, 94%, 66%;
+    --hsl-white: 0, 0%, 100%;
+
+    /* Neutral */
+    --hsl-grayish-blue: 229, 8%, 60%;
+    --hsl-very-dark-blue: 229, 31%, 21%;
+
+    /* ### Typography ### */
+
+    /* Body Copy */
+    --basic-font-size: 1.125rem;
+
+    /* Fonts */
+    --basic-font-family: 'Rubik', sans-serif;
+
+    /* font-weights */
+    --font-weight-400: 400;
+    --font-weight-500: 500;
+
+}
+
+@media (min-width: 23.4375em) {
+    
+}
+
+@media (min-width: 90em) {
+   
+}
+
+/* ------------------- */
+/* Utility classes     */
+/* ------------------- */
+
+/* Color */
+.font-color-soft-blue{
+    color: hsl(var(--hsl-soft-blue))
+}
+
+.font-color-soft-red{
+    color: hsl(var(--hsl-soft-red))
+}
+
+.font-color-grayish-blue{
+    color: hsl(var(--hsl-grayish-blue))
+}
+
+.font-color-very-dark-blue{
+    color: hsl(var(--hsl-very-dark-blue));
+}
+
+.font-color-white{
+    color: hsl(var(--hsl-white))
+}
+
+.background-color-soft-blue{
+    background-color: hsl(var(--hsl-soft-blue))
+}
+
+.background-color-soft-red{
+    background-color: hsl(var(--hsl-soft-red))
+}
+
+.background-color-grayish-blue{
+    color: hsl(var(--hsl-grayish-blue))
+}
+
+.background-color-very-dark-blue{
+    color: hsl(var(--hsl-very-dark-blue))
+}
+
+.background-color-white{
+    color: hsl(var(--hsl-white))
+}
+
+/* font-weights */
+.font-weight-400 {
+    font-weight: var(--font-weight-400);
+}
+
+.font-weight-500 {
+    font-weight: var(--font-weight-500);
+}
+
+.uppercase{
+    text-transform: uppercase;
+}
+
+.letter-spacing{
+    letter-spacing: var(--letter-spacing, .1em);
+}
+
+/* SR */
+.sr-only {
+    position: absolute; 
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px; 
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap; /* added line */
+    border: 0;
+  }
+  
+
+/* Layout */
+
+.flex{
+    display: flex;
+    gap: var(--flex-gap, 2rem);
+}
+
+/* body > * {
+    width: max-content;
+    margin: 0 auto;
+} */
+
+/* ------------------- */
+/* Compontents         */
+/* ------------------- */
+
+/* primary navigation */
+
+.button{
+    cursor: pointer;
+    font-weight: var(--font-weight-400);
+    box-shadow: 0px 5px 8px 0px hsl(var(--hsl-grayish-blue), .5); 
+    border-radius: .5rem;
+    padding-inline: 1rem;
+    padding-block: .5rem .3rem;
+    margin: .2rem;
+}
+
+.red-button{
+    border: .125rem solid hsl(var(--hsl-soft-red));
+    margin: 0;
+}
+
+.red-button:hover,
+.red-button:active{
+    background-color: hsl(var(--hsl-white));
+    color: hsl(var(--hsl-soft-red));
+}
+
+.blue-button{
+    border: .125rem solid hsl(var(--hsl-soft-blue));
+}
+
+.blue-button:hover,
+.blue-button:active{
+    background-color: hsl(var(--hsl-white));
+    color: hsl(var(--hsl-soft-blue));
+}
+
+.gray-button{
+    border: .125rem solid transparent;
+}
+
+.gray-button:hover,
+.gray-button:active{
+    background-color: hsl(var(--hsl-white));
+    color: hsl(var(--hsl-grayish-blue));
+    border: .125rem solid hsl(var(--hsl-grayish-blue));
+}
+
+.primary-navigation > li:hover,
+.primary-navigation > li:active{
+    color: hsl(var(--hsl-soft-red));
+}
+
+.primary-navigation > li{
+    cursor: pointer;
+}
+
+/* tabs */
+.tabs{
+    border-bottom: .1rem solid hsla(var(--hsl-grayish-blue), .5);
+}
+
+.tab{
+    all: unset;
+    margin-inline: 0 3rem;
+    padding: 1.3rem;
+    color: hsl(var(--hsl-grayish-blue));
+}
+
+.tab[aria-selected="true"]{    
+    border-bottom: .2rem solid hsl(var(--hsl-soft-red));
+}
+
+.tab:hover,
+.tab:active{
+    color: hsl(var(--hsl-soft-red));
+}
+
+/* teaser */
+
+.space >  * {
+    margin-bottom: 1rem;
+}
+
+/* extension tab */
+.extension-tab{
+    margin: 1rem;
+    width: 400px;
+    height: 600px;
+    border-radius: 1rem;
+    box-shadow: 0px 5px 8px 0px hsl(var(--hsl-grayish-blue), .3); 
+
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center; */
+    display:grid;
+    grid-template-columns: 1fr max-content 1fr;
+    grid-template-rows: 3fr 1fr .5fr 1fr;
+    /* justify-content: center; */
+    align-items: center;
+    text-align: center;
+}
+
+.extension-tab-logo{
+    margin: 0 auto;
+    grid-column: 2;
+    width: 150px;
+    height: 150px;
+}
+
+.extension-tab-information{
+    grid-column: 2;
+    padding-bottom: 3rem;
+    font-weight: var(--font-weight-400);  
+}
+
+.extension-tab-information-h3{
+    margin-bottom: 1rem;
+}
+
+.extension-tab-dotted-line{
+    grid-column: 1 / span 3;
+    /* height: 5rem;
+    border-bottom: .6rem dotted hsla(var(--hsl-grayish-blue), .3);  */
+    padding: 1em;
+    background-image: radial-gradient(circle, hsla(var(--hsl-grayish-blue), .3) 3px, rgba(255,255,255,0) 1px);
+    background-position: top, right, bottom, left;
+    background-size: 30px 5px, 5px 15px;
+    background-repeat: repeat-x;
+}
+
+.extension-tab-button{
+    grid-column: 2;
+    padding-block: 1rem;
+    padding-inline: 3rem;
+    align-self: start;
+}
+
+/* drive out menu */
+.last{
+    border-bottom: 1px solid hsla(var(--hsl-grayish-blue), .5);
+}
+
+.drive-out-menu-group{
+    justify-content: space-between;
+    border-top: 1px solid hsla(var(--hsl-grayish-blue), .5);
+    /* border: .3px solid green; */
+}
+
+.drive-out-menu-group > button {
+    all: unset;
+    margin-inline: 1rem;
+    /* font-size: 1rem; */
+    font-weight: 900;
+    
+}
+
+.open{
+    color: hsl(var(--hsl-soft-red))
+}
+
+.close{
+    color: hsl(var(--hsl-soft-blue))
+}
+
+.question,
+.answer {
+    padding-block: 1.5rem;
+}
+
+.question:hover,
+.question:active{
+    cursor: pointer;
+    color: hsl(var(--hsl-soft-red))
+}
+
+.drive-out-menu-button:hover,
+.drive-out-menu-button:active{
+    cursor: pointer;
+}
+
+/* Contact form for newsletter */
+input:invalid {
+    border-color: hsl(var(--hsl-soft-red));
+}
+input,
+input:valid {
+    border-color: none;
+    border: 1px solid transparent;
+    outline: none;
+}
+
+input:active,
+input:hover{
+    outline: none;
+    border: 1px solid transparent;
+    box-shadow: none;
+}
+
+.submit-button{
+    align-self: start;
+}
+
+.input-with-error{
+    width:14rem;
+    padding: .3rem;
+    width: 100%;
+    border-radius: .5rem;
+    /* display: none; */
+    background-color: hsl(var(--hsl-soft-red));
+    /* visibility: hidden; */
+}
+
+.input-with-error--no-error{
+    background-color: transparent;
+}
+
+
+.input-field{
+    border-radius: .5rem;
+    width: 100%;
+    display: inline-block;
+}
+
+
+/* ------------------- */
+/* Page specific       */
+/* ------------------- */ 
+
+.primary-navigation{
+    align-items: center;
+}
